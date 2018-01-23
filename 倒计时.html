@@ -64,7 +64,8 @@
             setTime();
             if (Time == 0) {
                 // clearInterval(timer); //判断时间如果等于0的话就停止计时器111
-                Time = 10;
+                clearInterval(timer);
+                // Time = 10;
                 console.log('时间到了，开始抢购');
 
             }
