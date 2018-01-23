@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        .box {
+            /* position: relative; */
+        }
+        
+        #Div {
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+            margin: 150px auto;
+            position: absolute;
+        }
+        
+        li {
+            list-style: none;
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="button" value="点击" id="btn" />
+        <input type="button" value="点击111" id="btn2" />
+        <div id="Div" style="display:block"></div>
+        <!-- <input type="text" value="pass" id="name"> -->
+        <button id="btn1">添加段落</button>
+        <ul>
+            <li>段落1</li>
+            <li>段落2</li>
+            <li>段落3</li>
+        </ul>
+        <button id="top">top</button>
+    </div>
+</body>
+
+</html>
+<!--<script src="./jquery1.10.2jquery.min.js"></script>-->
+<script src="./jquery1.10.2jquery.min"></script>
+
+<script>
+    var id = document.getElementById("Div");
+    var btn = document.getElementById("btn");
+    btn.onclick = function() {
+        if (id.style.display == 'block') {
+            id.style.display = 'none';
+        } else {
+            id.style.display = 'block';
+        }
+    }
+</script>
+
+<script>
+    $(function() {
+        $("#btn1").click(function() {
+            $("ul").append("<li>这是新追加的段落</li>")
+        });
+        $("#top").click(function() {
+            $("html,body").animate({
+                scrollTop: 0
+            }, 500)
+        });
+        $("#btn2").click(function() {
+            $("#Div").animate({
+                right: "1000px"
+            }, 1000)
+        })
+    })
+</script>

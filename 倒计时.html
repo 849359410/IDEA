@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .time {
+            width: 600px;
+            height: 200px;
+            margin: 300px auto;
+            font-size: 90px;
+            background-color: aqua;
+            /*border-radius: 40px;*/
+            text-align: center;
+            box-shadow: 5px 5px 5px #ccc;
+          border: 10px solid transparent;
+            padding: 15px;
+            border-image: url("./images/border.png") 30 round;
+        }
+
+        .time>span {
+            line-height: 200px;
+            color: red;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="time">
+        <span>0</span>
+        <span>0</span>
+        <span>:</span>
+        <span>0</span>
+        <span>0</span>
+        <span>:</span>
+        <span>0</span>
+        <span>0</span>
+    </div>
+</body>
+
+</html>
+<script>
+
+    //购物倒计时精简版
+
+    setTimeOutGo();
+
+    function setTimeOutGo() {
+        var Time = 40000;
+        var spans = document.querySelectorAll(".time>span");
+        setTime();
+        var timer = setInterval(function() {
+            Time--;
+            console.log(Time);
+            setTime();
+            if (Time == 0) {
+                // clearInterval(timer); //判断时间如果等于0的话就停止计时器
+                Time = 10;
+                console.log('时间到了，开始抢购');
+
+            }
+        }, 1000);
+
+        function setTime() {
+            var h = parseInt(Time / 60 / 60);
+            var m = parseInt(Time / 60 - h * 60);
+            var s = Time - h * 60 * 60 - m * 60;
+            var h0 = parseInt(h / 10);
+            var h1 =parseInt( h % 10);
+            var m0 = parseInt(m / 10);
+            var m1 = parseInt(m % 10);
+            var s0 = parseInt(s / 10);
+            var s1 = parseInt(s % 10);
+
+            spans[0].innerHTML = h0;
+            spans[1].innerHTML = h1;
+            spans[3].innerHTML = m0;
+            spans[4].innerHTML = m1;
+            spans[6].innerHTML = s0;
+            spans[7].innerHTML = s1;
+        };
+    }
+</script>
