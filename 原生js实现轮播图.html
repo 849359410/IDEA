@@ -236,12 +236,12 @@
 	    }
 	    </style>
 	    <script type="text/javascript">
-	    var speed = 40
+	    var speed = 30
 	    window.onload = function() {
 	        var demo = document.getElementById("demo");
 	        var demo2 = document.getElementById("demo2");
 	        var demo1 = document.getElementById("demo1");
-	        demo2.innerHTML = demo1.innerHTML
+	        demo2.innerHTML = demo1.innerHTML;
 
 	        function Marquee() {
 	            if (demo.scrollTop >= demo1.offsetHeight) {
@@ -266,7 +266,11 @@
 	            <li><a href="#" target="_blank">6今天你写代码了吗</a></li>
 	            <li><a href="#" target="_blank">7分享的胸怀和互助的精神最终成就了你</a></li>
 	        </ul>
-	        <div id="demo2"></div>
+	        <ul id="demo2"></ul>
 	    </div>
 	</body>
+	<script>
+		var a = '额你妹啊';
+		document.write(a)
+	</script>
 	</html>
